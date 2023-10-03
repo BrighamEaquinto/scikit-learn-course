@@ -2,9 +2,9 @@ project:
   type: book
 
 book:
-  title: "scikit-learn-course"
-  author: "Norah Jones"
-  date: "10/2/2023"
+  title: "Machine Learning" 
+  subtitle: "Quality & Accessable Scikit-Learn Course" 
+  author: "Brigham Eaquinto"
   chapters:
     - index.qmd
     - intro.qmd

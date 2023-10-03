@@ -1,0 +1,37 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Machine Learning",
+    "section": "",
+    "text": "Preface\nThe goal of this book is to make a bootcamp-like course similar to R Bootcamp. Material will cover introductary to intermediate topics.\nThis book will not remake the Scikit-Learn website, nor will it be a deepdive like the great textbook Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow. This is intended for students ______. Students are encouraged to continue their journey of machine learning beyond what this book can provide, seek out other resources that will benefit them, and ultimately, master machine learning.\n\n\nTopics Covered:\n\nWhat is machine learning\n\nStructured data machine learning vs unstructured data deep learning (TensorFlow and PyTorch)\nclassification vs regression vs cluster (NNs too or keep for other course?)\ntake a step back and think “What will determine how a student does in class?”, that is what machine learning does.\n\nHow to use a machine learning model\nModels, models everywhere, nor any drop to drink (Samuel Taylor Coleridge’s famous phrase) or (insert Dr. Seuss reference here)\n\nlinear\nlogistic\ntree\nrandom forest\nKNN\nstocastic gradient decent\ngaussian\nsupport vector\nnaive bayes\ngradient boosted\n\nxgboost\n\nBrute force these models or use calculus to determine the best fit for the problem that is at hand?\nthe whole process (making a pipeline rather than a useless one off):\n\nread in data\nclean/tidy/wrangle\npreprocess\nfit model\nkfold\ntest\npick the best one based off a predetermined metric\n\ndeploy the model\n\nclient-side & server-side\nAPI calls are “function-maker-available-ers”\n\nStatistics vs machine learning\n\ndescriptive statistics\ninferential statistics\nmachine learning\n\nvisualizing the model on a two dimensional plane\n\nmatplotlib\naltair\nplotly\n\nCombining models\nmetrics of success\nDesign the problem based on what data do we have as it comes in rather then holding out Petal.Width and using Petal.Length, Sepal.Width, and Sepal.Length\nHave a plethora of examples\nModel explainers\nWrite a medium article about this?\n\n\n\nPackages Used\n\nScikit-Learn\nPandas\nNumpy\nmatplotlib\naltair\nplotly"
+  },
+  {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "1  Introduction",
+    "section": "",
+    "text": "This is a book created from markdown and executable code.\nSee Knuth (1984) for additional discussion of literate programming.\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97."
+  },
+  {
+    "objectID": "summary.html",
+    "href": "summary.html",
+    "title": "2  Summary",
+    "section": "",
+    "text": "In summary, this book has no content whatsoever."
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "References",
+    "section": "",
+    "text": "Knuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97."
+  },
+  {
+    "objectID": "index.html#topics-covered",
+    "href": "index.html#topics-covered",
+    "title": "Machine Learning",
+    "section": "### Topics Covered:",
+    "text": "### Topics Covered:"
+  }
+]

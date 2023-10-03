@@ -1,5 +1,63 @@
 # Preface {.unnumbered}
 
-This is a Quarto book.
+The goal of this book is to make a bootcamp-like course similar to [R Bootcamp](https://brighameaquinto.github.io/). Material will cover introductary to intermediate topics. 
 
-To learn more about Quarto books visit <https://quarto.org/docs/books>.
+This book will not remake the [Scikit-Learn website](https://scikit-learn.org/stable/), nor will it be a deepdive like the great textbook [Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow](https://www.amazon.com/Hands-Machine-Learning-Scikit-Learn-TensorFlow/dp/1098125975). This is intended for students ______. Students are encouraged to continue their journey of machine learning beyond what this book can provide, seek out other resources that will benefit them, and ultimately, master machine learning. 
+
+<br>
+
+
+### Topics Covered:
+
+- What is machine learning
+    - Structured data machine learning vs unstructured data deep learning (TensorFlow and PyTorch)
+    - classification vs regression vs cluster (NNs too or keep for other course?)
+    - take a step back and think "What will determine how a student does in class?", that is what machine learning does. 
+- How to use a machine learning model
+- Models, models everywhere, nor any drop to drink (Samuel Taylor Coleridge's famous phrase) or (insert Dr. Seuss reference here) 
+    - linear
+    - logistic
+    - tree
+    - random forest
+    - KNN
+    - stocastic gradient decent
+    - gaussian
+    - support vector 
+    - naive bayes 
+    - gradient boosted  
+    - xgboost
+- Brute force these models or use calculus to determine the best fit for the problem that is at hand?
+- the whole process (making a pipeline rather than a useless one off):
+    - read in data
+    - clean/tidy/wrangle
+    - preprocess
+    - fit model
+    - kfold 
+    - test 
+    - pick the best one based off a predetermined metric
+- deploy the model
+    - client-side & server-side
+    - API calls are "function-maker-available-ers"
+- Statistics vs machine learning 
+    - descriptive statistics
+    - inferential statistics
+    - machine learning
+- visualizing the model on a two dimensional plane
+    - matplotlib
+    - altair
+    - plotly 
+- Combining models
+- metrics of success 
+- Design the problem based on what data do we have as it comes in rather then holding out Petal.Width and using Petal.Length, Sepal.Width, and Sepal.Length
+- Have a plethora of examples 
+- Model explainers
+- Write a medium article about this?
+
+### Packages Used
+
+- Scikit-Learn
+- Pandas
+- Numpy
+- matplotlib
+- altair
+- plotly
