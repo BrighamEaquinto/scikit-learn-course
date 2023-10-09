@@ -1,0 +1,25 @@
+
+- read in data
+- feature engineering testing. Come back to this step frequently.  
+- initiate pipeline:
+    - apply feature engineering
+    - preprocess 
+        - scale 
+        - encode categorical data
+        - impute
+    - initiate multiple models
+        - initiate gridsearch dictionary of parameters for _each_ model
+        - Juxtapose or not juxtpose?
+    - loop through each model and each model's parameter options
+    - measure success 
+    - grab best model and best hyperparameters
+    - pickle the model
+
+- Why a pipeline if the goal is to do this once?
+    - be able to go back and tune as needed?
+- When grab the most important features?
+
+
+- read in data
+- read in model
+- use model to predict `model.predict`

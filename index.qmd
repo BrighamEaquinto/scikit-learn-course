@@ -15,18 +15,22 @@ This book will not remake the [Scikit-Learn website](https://scikit-learn.org/st
     - take a step back and think "What will determine how a student does in class?", that is what machine learning does. 
 - How to use a machine learning model
 - Models, models everywhere, nor any drop to drink (Samuel Taylor Coleridge's famous phrase) or (insert Dr. Seuss reference here) 
-    - linear
-    - logistic
-    - tree
-    - random forest
-    - KNN
-    - stocastic gradient decent
-    - gaussian
-    - support vector 
-    - naive bayes 
-    - gradient boosted  
-    - xgboost
-- Brute force these models or use calculus to determine the best fit for the problem that is at hand?
+    - What is an algorithm? 
+        - Instructions for the means to an end. 
+        - Each had pros and cons, none of these are a one-size fits all (but xgboost is pretty good at Kaggle cometitions!)
+    - Models: 
+        - linear
+        - logistic
+        - tree
+        - random forest
+        - KNN
+        - stocastic gradient decent
+        - gaussian
+        - support vector 
+        - naive bayes 
+        - gradient boosted  
+        - xgboost
+- Brute force these models or use calculus to determine the best fit for the problem that is at hand? Not exacty what calc can do
 - the whole process (making a pipeline rather than a useless one off):
     - read in data
     - clean/tidy/wrangle
@@ -52,11 +56,16 @@ This book will not remake the [Scikit-Learn website](https://scikit-learn.org/st
 - Have a plethora of examples 
 - Model explainers
 - Write a medium article about this?
+- Hyper parameter tune (within the pipeline?)
+    - grid search
+- Hathaway talked about changing the threshold
+- NAs in machine learning
+- Resampling (with replacement), oversampling, undersampling
 
 ### Packages Used
 
-- Scikit-Learn
-- Pandas
+- __Scikit-Learn__ (main focus)
+- Pandas (second most important)
 - Numpy
 - matplotlib
 - altair
