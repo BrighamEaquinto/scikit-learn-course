@@ -1,3 +1,10 @@
+---
+title: "Full Example"
+execute: 
+  error: false
+jupyter: python3
+---
+
 
 - read in data
 - feature engineering testing. Come back to this step frequently.  
@@ -23,3 +30,103 @@
 - read in data
 - read in model
 - use model to predict `model.predict`
+
+
+## Let's Begin
+
+##### Libraries and Set Up
+```{python}
+import pandas as pd
+
+from sklearn.datasets import load_iris
+
+from sklearn.pipeline import Pipeline
+from sklearn.compose import ColumnTransformer
+from sklearn.preprocessing import FunctionTransformer
+from sklearn.impute import SimpleImputer
+from sklearn.preprocessing import OneHotEncoder
+
+from sklearn.model_selection import train_test_split
+from xgboost import XGBClassifier
+
+from sklearn.metrics import accuracy_score, classification_report
+from sklearn.metrics import roc_auc_score
+
+# import optuna
+
+import warnings
+warnings.filterwarnings("ignore")
+```
+
+
+
+```{python}
+iris = pd.read_csv("https://gist.githubusercontent.com/curran/a08a1080b88344b0c8a7/raw/0e7a9b0a5d22642a06d3d5b9bcbad9890c8ee534/iris.csv").assign(species = lambda x: x['species'].map({"setosa": 0, "versicolor": 1, "virginica": 2}))
+
+# print(iris['species'].unique())
+
+```
+
+```{python}
+X = iris.drop(['species'], axis=1)
+y = iris['species']
+
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, 
+    test_size=0.3, 
+    random_state=0
+    )
+```
+
+```{python}
+def get_sepal_ratio(df):
+    df['sepal_ratio'] = df['sepal_length'] / df['sepal_width'] 
+    return df
+
+def get_petal_ratio(df):
+    df['petal_ratio'] = df['petal_length'] / df['petal_width']
+    return df
+```
+
+```{python}
+feature_engineering = ColumnTransformer([
+    ('sepal_ratio', FunctionTransformer(get_sepal_ratio, validate=False),
+     ['sepal_length', 'sepal_width']),
+    ('petal_ratio', FunctionTransformer(get_petal_ratio, validate=False),
+     ['petal_length', 'petal_width'])
+])
+```
+
+```{python}
+categorical_columns = list(X_train.select_dtypes(include=['object']).columns.values.tolist())
+numeric_columns = list(X_train.select_dtypes(exclude=['object']).columns.values.tolist())
+
+numeric_transformer = SimpleImputer(strategy='constant')
+categorical_transformer = Pipeline(
+    steps=[
+        ('imputer', SimpleImputer(strategy='constant', fill_value='missing')),
+        ('onehot', OneHotEncoder(handle_unknown='ignore')),
+    ])
+```
+
+```{python}
+preprocessor = ColumnTransformer(
+    transformers=[
+        ('feature_engineering', feature_engineering, numeric_columns),
+        ('numeric_transformers', numeric_transformer, numeric_columns),
+        ('categorical_transformers', categorical_transformer, categorical_columns),
+    ])
+```
+
+```{python}
+model = XGBClassifier(random_state=0, eval_metric='mlogloss')
+pipeline = Pipeline(steps=[('preprocessor', preprocessor),
+                           ('model', model)])
+pipeline.fit(X_train, y_train)
+```
+
+```{python}
+predictions = pipeline.predict(X_test)
+print('Accuracy: ', accuracy_score(y_test, predictions))
+print('AUC: ', roc_auc_score(y_test, predictions))
+```
